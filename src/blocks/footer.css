@@ -1,0 +1,9 @@
+.footer {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #777;
+}
+
+.footer__follow-fix {
+    margin-right: -30px;
+}

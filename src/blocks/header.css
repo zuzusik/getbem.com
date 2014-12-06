@@ -1,0 +1,55 @@
+.header {
+    margin-top: -20px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    color: white;
+    background:
+    url('/images/header__background.jpg') 50% -100px fixed, #4c748c;
+    text-align: center;
+}
+
+.header__logo {
+    height: 144px;
+    width: 144px;
+}
+
+.header__desc {
+    max-width: 1024px;
+    margin: auto;
+    padding: 20px 50px 0px 50px;
+}
+
+.header__desc {
+    text-align: center;
+    text-shadow: 0px 2px 1px #000;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+@media screen and (min-width: 35.5em) {
+    .header__desc {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .header__desc {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .header__desc {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .header__desc {
+        font-size: 30px;
+        line-height: 38px;
+    }
+}
