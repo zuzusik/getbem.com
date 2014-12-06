@@ -15,9 +15,8 @@ gulp.task('connect', function () {
 });
 
 gulp.task('watch', function () {
-    watch(['!jspm_packages', 'src/**/*'], function (file) {
-        connect.reload().write(file);
-    });
+    watch(['!jspm_packages', 'src/**/*'])
+        .pipe(connect.reload());
 });
 
 gulp.task('default', ['connect', 'watch']);
