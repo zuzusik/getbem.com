@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BEM — Introduction</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<script src="/jspm_packages/system.js"></script>
+<script src="/config.js"></script>
+<script>
+    /* global System */
+    System.import('index').then(function ($) {
+        $('#affix').affix({
+            offset: {
+                top: 50
+            }
+        });
+        $('body').scrollspy({ target: '#affix' });
+    });
+</script>
+<body>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Get BEM</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/introduction">Introduction</a></li>
+                    <li><a href="#naming">Naming</a></li>
+                    <li><a href="#building">Building</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://blog.getbem.com">Blog</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 id="introduction">Introduction</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">How to Scale and Maintain Legacy CSS with Sass and SMACSS</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+                <h2 id="methodologies">Methodologies</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="How to Scale and Maintain Legacy CSS with Sass and SMACSS">http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+                <h2 id="why">Why BEM over the other?</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="How to Scale and Maintain Legacy CSS with Sass and SMACSS">http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+                <h2 id="bem">Blocks, Elements and Modifiers</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="How to Scale and Maintain Legacy CSS with Sass and SMACSS">http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+                <h2 id="hood">Under the hood</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="How to Scale and Maintain Legacy CSS with Sass and SMACSS">http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+                <h2 id="benefits">Benefits</h2>
+
+                <p>On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+
+                <p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+
+                <p>This also true for long-term projects with legacy code (read "<a href="How to Scale and Maintain Legacy CSS with Sass and SMACSS">http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/</a>" — some nice SMACSS and BEM mixing in there).</p>
+
+            </div>
+            <div class="col-md-3">
+                <div class="hidden-print hidden-xs hidden-sm affix" id="affix">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#methodologies">Methodologies</a></li>
+                        <li><a href="#why">Why BEM over the others</a></li>
+                        <li><a href="#bem">Blocks, Elements and Modifiers</a></li>
+                        <li><a href="#hood">Under the hood</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                    </ul>
+                    <!-- <a class="back-to-top" href="#top">Back to top</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul class="list list-unstyled list-inline">
+                <li>
+                    <span class="github-btn hide" data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1"/>
+                </li>
+                <li>
+                    <span class="github-btn hide" data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1"/>
+                </li>
+                <li>
+                    <a href="https://twitter.com/getbem" class="twitter-follow-button footer__follow-fix" data-show-count="true" data-dnt="true">
+                        Follow @getbem
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="getbem" data-related="getbem" data-hashtags="b_" data-dnt="true">
+                        Tweet
+                    </a>
+                </li>
+            </ul>
+
+            <p>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://github.com/matmuchrapna">@matmuchrapna</a>.<br/>
+                Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.<br/>
+                Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/levels/pages/LICENSE.md">CC BY 3.0</a>.</p>
+
+                <ul class="list list-unstyled list-inline">
+                    <li class="list__item"><a href="https://twitter.com/getbem">Twitter</a></li>
+                    <li class="list__item"><a href="https://github.com/getbem/getbem.com/">GitHub</a></li>
+                    <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues">Issues</a></li>
+                    <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/8">Project goals</a></li>
+                    <li class="list__item"><a href="https://github.com/getbem/getbem.com/issues/1">Are you using BEM?</a></li>
+                </ul>
+            </div>
+
+    </div>
+
+</body>
+</html>

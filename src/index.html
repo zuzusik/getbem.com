@@ -8,8 +8,10 @@
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-    /* global System */
-    System.import('index');
+    /* global System, window */
+    System.import('index').then(function ($) {
+        $(window).trigger('load'); // Hack to enable bootstrap hooks
+    });
 </script>
 <body>
 
@@ -23,13 +25,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand active" href="#">Get BEM</a>
+                <a class="navbar-brand" href="/">Get BEM</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="/introduction">Introduction</a></li>
                     <li><a href="#naming">Naming</a></li>
                     <li><a href="#building">Building</a></li>
                     <li><a href="#faq">FAQ</a></li>
