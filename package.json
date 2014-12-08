@@ -1,47 +1,32 @@
 {
   "name": "getbem.com",
-  "version": "0.0.0",
-  "description": "getbem.com site project",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "GetBEM.com site",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "mocha -R spec -t 10000"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:matmuchrapna/gulp-bem-stub.git"
+    "url": "https://github.com/getbem/getbem.com.git"
   },
   "keywords": [
-    "gulp",
-    "bem"
+    "BEM"
   ],
-  "author": "Vsevolod Strukchinsky",
+  "author": "Vsevolod Strukchinsky <floatdrop@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/floatdrop/getbem.com/issues"
+    "url": "https://github.com/getbem/getbem.com/issues"
   },
-  "homepage": "https://github.com/floatdrop/getbem.com",
-  "dependencies": {
-    "bower": "^1.3.9",
-    "buildbranch": "^0.0.1",
-    "del": "^0.1.2",
-    "each-done": "^1.0.0",
-    "express": "^4.9.8",
-    "gulp": "^3.8.6",
-    "gulp-autoprefixer": "^1.0.1",
-    "gulp-bem": "^1.0.1",
-    "gulp-bem-pack": "^0.1.1",
-    "gulp-concat": "^2.4.0",
-    "gulp-jade": "^0.9.0",
-    "gulp-plumber": "^0.6.5",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "1.1.0",
-    "gulp-uglify": "^1.0.1",
-    "gulp-watch": "^1.0.0",
-    "jquery": "^2.1.1",
-    "marked": "^0.3.2"
-  },
+  "homepage": "https://github.com/getbem/getbem.com",
   "devDependencies": {
-    "mocha": "^1.21.5",
-    "through2": "~0.6.1"
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.2.0",
+    "gulp-watch": "^3.0.0"
+  },
+  "dependencies": {
+    "duo": "^0.8.10",
+    "duo-jade": "0.0.5"
   }
 }

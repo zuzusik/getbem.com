@@ -1,119 +1,58 @@
 var gulp = require('gulp');
-var bem = require('gulp-bem');
-var concat = require('gulp-concat');
+var connect = require('gulp-connect');
+var watch = require('gulp-watch');
 var del = require('del');
-var jade = require('gulp-jade');
-var sass = require('gulp-sass');
-var pack = require('gulp-bem-pack');
-var autoprefixer = require('gulp-autoprefixer');
-var uglify = require('gulp-uglify');
-var buildBranch = require('buildbranch');
-var each = require('each-done');
-var rename = require('gulp-rename');
+var Duo = require('duo');
+// var jade = require('duo-jade');
 
-var levels = [
-    'levels/js',
-    'libs/bootstrap/levels/normalize',
-    'libs/bootstrap/levels/print',
-    'libs/bootstrap/levels/glyphicons',
-    'libs/bootstrap/levels/scaffolding',
-    'libs/bootstrap/levels/core',
-    'libs/bootstrap/levels/components',
-    'libs/bootstrap/levels/js',
-    'levels/base',
-    'levels/blocks',
-    'levels/pages'
-];
-
-var paths = {
-    '404': '404.html',
-    'index': 'index.html',
-    'introduction': 'introduction/index.html',
-    'naming': 'naming/index.html',
-    'building': 'building/index.html',
-    'faq': 'faq/index.html'
-};
-
-
-var pages = Object.keys(paths);
-
-var tree = bem(levels);
-
-gulp.task('js', function () {
-    return tree.deps('levels/pages/index')
-        .pipe(bem.src('{bem}.js'))
-        .pipe(pack('index.js'))
-        .pipe(gulp.dest('./dist'));
+gulp.task('clean', function (cb) {
+    del('dist', cb);
 });
 
-gulp.task('uglify', ['js'], function () {
-    return gulp.src('dist/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+gulp.task('js', function (cb) {
+    new Duo(__dirname + '/src')
+        .installTo('../components')
+        .buildTo('../dist')
+        .entry('index.js')
+        .write(cb);
 });
 
 gulp.task('css', function (cb) {
-    each(pages, function (page) {
-        return tree.deps('levels/pages/' + page)
-            .pipe(bem.src('{bem}.{css,scss}'))
-            .pipe(concat(page + '.css'))
-            .pipe(sass())
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
-                cascade: false
-            }))
-            .pipe(gulp.dest('./dist'));
-    }, cb);
+    new Duo(__dirname + '/src')
+        .installTo('../components')
+        .buildTo('../dist')
+        .entry('index.css')
+        .write(cb);
 });
 
-gulp.task('html', function (cb) {
-    each(pages, function (page) {
-        return tree.deps('levels/pages/' + page)
-            .pipe(bem.src('{bem}.jade'))
-            .pipe(concat({
-                path: 'levels/pages/' + page + '/index.jade',
-                base: 'levels/pages/' + page
-            }))
-            .pipe(jade({pretty: true}))
-            .pipe(rename(paths[page]))
-            .pipe(gulp.dest('dist'));
-    }, cb);
+gulp.task('html', function () {
+    return gulp.src('src/**/*.html')
+        .pipe(gulp.dest('dist'));
 });
 
-gulp.task('cname', function () {
-    return gulp.src('CNAME').pipe(gulp.dest('dist'));
+gulp.task('images', function () {
+    return gulp.src('src/images/**/*').pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('assets', function () {
-    return gulp.src('assets/**').pipe(gulp.dest('dist'));
+gulp.task('favicon', function () {
+    return gulp.src('src/favicon.png').pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', function (cb) {
-    del(['./dist'], cb);
+gulp.task('assets', ['images', 'favicon']);
+
+gulp.task('build', ['js', 'css', 'html', 'assets']);
+
+gulp.task('watch', function () {
+    watch(['src/**/*'], function () {
+        gulp.start('build');
+    });
 });
 
-gulp.task('build', ['html', 'css', 'js', 'assets', 'cname']);
-
-gulp.task('production', ['build', 'uglify']);
-
-gulp.task('gh', ['production'], function(done) {
-    buildBranch({ folder: 'dist', ignore: ['libs'] }, done);
+gulp.task('connect', function () {
+    connect.server({
+        root: 'dist',
+        livereload: true
+    });
 });
 
-gulp.task('express', function() {
-    var express = require('express');
-    var app = express();
-    app.use(express.static('dist'));
-    app.listen(4000);
-    console.log('Server is running on http://localhost:4000');
-});
-
-var watch = require('gulp-watch');
-gulp.task('watch', ['express', 'build'], function() {
-    watch('assets/**/*', function () { gulp.start('assets'); });
-    watch('levels/**/*.js', function () { gulp.start('js'); });
-    watch('levels/**/*.{scss,css}', function () { gulp.start('css'); });
-    watch('levels/**/*.jade', function () { gulp.start('html'); });
-});
-
-gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'connect']);
