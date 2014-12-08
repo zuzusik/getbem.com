@@ -5,10 +5,11 @@
     <title>BEM — Introduction</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
-<script src="/jspm_packages/system.js"></script>
-<script src="/config.js"></script>
+<script src="../jspm_packages/system.js"></script>
+<script src="../config.js"></script>
 <script>
     /* global System */
+    System.baseURL = '/';
     System.import('index').then(function ($) {
         $('#affix').affix({
             offset: {
