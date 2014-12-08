@@ -14,6 +14,7 @@ gulp.task('js', function (cb) {
         .installTo('../components')
         .buildTo('../dist')
         .entry('index.js')
+        .entry('introduction/index.js')
         .write(cb);
 });
 
@@ -22,6 +23,7 @@ gulp.task('css', function (cb) {
         .installTo('../components')
         .buildTo('../dist')
         .entry('index.css')
+        .entry('introduction/index.css')
         .write(cb);
 });
 
