@@ -1,5 +1,6 @@
 require('bootstrap');
 require('blocks/header.css!');
+require('blocks/icon.css!');
 
 var React = require('react');
 var NavBar = require('blocks/navbar/navbar.jsx!');
@@ -16,6 +17,42 @@ React.render(
         </div>
         <div className="container">
             <Advantages/>
+
+            <div className="row big-icons">
+                <div className="col-sm-4">
+                    <div className="icon">
+                        <a href="/introduction/">
+                            <div className="icon__image">
+                                <img src="/images/book.svg"/>
+                            </div>
+                            <h2 className="icon__caption">Introduction</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <div className="col-sm-4">
+                    <div className="icon">
+                        <a href="/naming/">
+                            <div className="icon__image">
+                                <img src="/images/rename.svg"/>
+                            </div>
+                            <h2 className="icon__caption">Naming</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <div className="col-sm-4">
+                    <div className="icon">
+                        <a href="/building/">
+                            <div className="icon__image">
+                                <img src="/images/build.svg"/>
+                            </div>
+                            <h2 className="icon__caption">Building</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <Consumers/>
         </div>
         <Footer/>
