@@ -1,4 +1,4 @@
-require('bootstrap');
+var $ = require('bootstrap');
 require('blocks/header.css!');
 
 var React = require('react');
@@ -6,6 +6,18 @@ var NavBar = require('blocks/navbar/navbar.jsx!');
 var Footer = require('blocks/footer/footer.jsx!');
 
 var Affix = React.createClass({
+    componentDidMount: function () {
+        $('body').scrollspy({ target: '.affix' })
+
+        $(this.getDOMNode()).find("ul.nav").affix({
+            offset: {
+                top: 100,
+                bottom: function () {
+                    return (this.bottom = $('.footer').outerHeight(true))
+                }
+            }
+        });
+    },
     render: function () {
         return (
             <div className="hidden-print hidden-xs hidden-sm affix">
