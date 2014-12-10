@@ -24,9 +24,9 @@ var Affix = React.createClass({
                 <ul className="nav nav-pills nav-stacked">
                     <li><a href="#introduction">Introduction</a></li>
                     <li><a href="#methodologies">Methodologies</a></li>
-                    <li><a href="#why">Why BEM over the others</a></li>
-                    <li><a href="#bem">Blocks, Elements and Modifiers</a></li>
-                    <li><a href="#hood">Under the hood</a></li>
+                    <li><a href="#whybemovertheothers">Why BEM over the others</a></li>
+                    <li><a href="#blockselementsandmodifiers">Blocks, Elements and Modifiers</a></li>
+                    <li><a href="#underthehood">Under the hood</a></li>
                     <li><a href="#benefits">Benefits</a></li>
                 </ul>
             </div>
