@@ -13,8 +13,12 @@ System.config({
     "github-buttons": "github:component/github-buttons@0.0.4",
     "jquery": "github:components/jquery@2.1.1",
     "jsx": "npm:plugin-jsx@0.0.2",
+    "md": "github:floatdrop/system-md@master",
     "plugin-jsx": "npm:plugin-jsx@0.0.2",
     "react": "npm:react@0.12.1",
+    "github:floatdrop/system-md@master": {
+      "showdown": "github:showdownjs/showdown@0.3.1"
+    },
     "github:jspm/nodelibs@0.0.7": {
       "Base64": "npm:Base64@0.2.1",
       "base64-js": "npm:base64-js@0.0.7",
@@ -102,3 +106,4 @@ System.config({
     }
   }
 });
+
