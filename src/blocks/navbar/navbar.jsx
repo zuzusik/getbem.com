@@ -1,10 +1,6 @@
 var React = require('react');
-var $ = require('bootstrap');
 
 var NavBar = React.createClass({
-    // componentDidMount: function () {
-    //     $(this.getDOMNode()).
-    // },
     render: function () {
         return (
             <nav className="navbar navbar-default" role="navigation">

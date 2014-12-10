@@ -1,11 +1,14 @@
 require('./footer.css!');
 require('./twitter');
-require('github-buttons');
-require('github-buttons/style.css!'); // Temporary hack to include styles
 
 var React = require('react');
 
 var Footer = React.createClass({
+    componentDidMount: function () {
+        // Require github-buttons only after react renders DOM elements
+        require('github-buttons');
+        require('github-buttons/style.css!'); // Temporary hack to include styles
+    },
     render: function () {
         return (
             <div className="footer">
